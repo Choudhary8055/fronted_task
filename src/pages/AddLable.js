@@ -23,7 +23,8 @@ function AddLable() {
 
   console.log(file);
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    setFile( [...e.target.files]);
     if (file) {
        const url = "http://localhost:3500/upload/csv";
        const csvData = await axios.post(url, file ,  {
@@ -38,20 +39,7 @@ function AddLable() {
 
   }
 
-
-
-  // const onload = (e)=>{
-  //   console.warn("file data", e.target.result)
-  //   const url = "http://localhost:3500/upload-csv";
-  //   const formData = { file : e.target.result }
-  //   return post(url, formData).then(response => console.warn("result", response))
-  // }
-
-  // let result = await axios.post(url);
-  // console.log(result);
-  // navigate('/');
-
-  return (
+ return (
     <>
       <div className='product'>
         Lable:
@@ -65,10 +53,11 @@ function AddLable() {
           <h1>Bulk Csv</h1>
           <div className="input-group">
             <label for='files'>Select files</label>
-            {/* <input id='files' type="file" onChange = {(e)=>setCsvData({csv: e.target.files[0]})}/> */}
-            <input type='file' accept='.csv' onChange={(e) => { setFile( [...e.target.files] ) }} required  />
+           
+            {/* <input type='file' accept='.csv' onChange={(e) => { setFile( [...e.target.files] ) }} required  /> */}
+            <input type='file' accept='.csv' onChange={(e) =>{ handleSubmit(e) }} required  />
           </div>
-          <button className="submit-btn" onClick={(e) => { handleSubmit(e) }}>Upload</button>
+          {/* <button className="submit-btn" onClick={(e) => { handleSubmit(e) }}>Upload</button> */}
         </form>
       </div>
     </>

@@ -38,6 +38,11 @@
 }
 
 /* css */
+
+body{
+  background-color: beige;
+}
+
 .inputBox {
   padding: 7px;
   /* display: block; */
@@ -81,27 +86,57 @@
   padding: 5px;
 }
 
-/* .product{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-} */
+product tr:nth-child(2n){
+  background-color: lightgray;
+}
+table{
+  border-collapse: collapse;
+ }
 
 .product tr td {
-  /* display: inline-block; */
-  width: 500px;
+   width: 500px;
   border: 1px solid skyblue;
   padding: 5px;
+  border-collapse: collapse;
 }
 
- .product button{
+ .product button .btn-product{
   margin: 10px;
   padding: 5px;
   text-decoration: none;
   border-radius: 8px;
+  border: none;
+  background: skyblue;
+  color: black;
 
  }
+
+ a{
+  color: black;
+  text-decoration: none;
+}
+
+.Lable-list .search-product, #select-product{
+  width: 300px;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+input, select, button{
+  margin: 10px 10px;
+  outline: none;
+  border: none;
+}
+
+input,select:focus{
+  box-shadow : 0px 0px 10px rgb(16, 157, 213);
+}
+select option{
+  border-radius: 10px;
+}
+
 
  /* .search-product {
   width: 400px;

@@ -12,7 +12,7 @@ function LabelList() {
 	const [pageNum, setPageNum] = useState(1);
 	const [buttons, setButtons] = useState([1, 2, 3, 4, 5,6,7,8,9]);
 	const getData = async () => {
-		const url = `http://localhost:3500/getData?page=${pageNum}&limit=5`;
+		const url = `http://localhost:3500/getData?page=${pageNum}&limit=8`;
 		const response = await axios.get(url);
 		setProducts([...response.data]);
 	};
@@ -23,8 +23,7 @@ function LabelList() {
 
 	const nextPage =(num)=>{
 		setPageNum(num+1);
-
-	}
+    }
 
 	useEffect(() => {
 		getData();
