@@ -87,7 +87,7 @@ function LabelList() {
 			/>
 			<select
 				name="select"
-				id=""
+				id="select-product"
 				value={searchBy.searchFor}
 				onChange={e => setSearchBy({ ...searchBy, searchFor: e.target.value })}>
 				<option value="lable">Search by Lable</option>
